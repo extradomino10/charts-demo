@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Charts Demo</title>
+</head>
+<body>
+
+<h2>Charts Demo</h2>
+<ul>
+	<li><a href="chartjs.html">Chart JS</a></li>
+	<li><a href="highcharts.html">Highcharts</a></li>
+</ul>
+
+<h4>Chart Type</h4>
+<select onchange="typeChanged(this.value)">
+	<option value="Barra">Column</option>
+	<option value="Area">Area/Line</option>
+	<option value="Torta">Pie</option>
+</select>
+
+<h4>Chart Mode</h4>
+<select onchange="modeChanged(this.value)">
+	<option value="full">Desktop</option>
+	<option value="mobile">Mobile</option>
+</select>
+
+<script type="text/javascript">
+	document.querySelectorAll('select')[0].value = localStorage.getItem('chart_type') || 'Barra';
+	document.querySelectorAll('select')[1].value = localStorage.getItem('chart_mode') || 'Barra';
+
+	function typeChanged(val) {
+		localStorage.setItem("chart_type",val);	
+	}
+
+	function modeChanged(val) {
+		localStorage.setItem("chart_mode",val);	
+	}
+</script>
+
+</body>
+</html>
